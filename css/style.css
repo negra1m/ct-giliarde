@@ -13,20 +13,26 @@ body a{
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
 }
+
+#myVideo {
+	position: relative;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+  }
+
 .header {
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	background: url(../images/banner11.jpg)no-repeat center top;
-	background-size: 10% 10%;
-	padding:16% 0 0 0;
-	-webkit-background-size: contain;
-	-moz-background-size: contain;
-	-o-background-size: contain;
-	background-size: contain;
-	background-position: right;
-	background-color: #020100;
+	display: flex;
+
+}
+
+.content-header {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    top: 30vh;
 }
 
 .header::before {
@@ -232,7 +238,9 @@ li.rss a span:hover{
 }
 /* start h_menu */
 .h_menu4{
-	float:right;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .toggleMenu {
     display:  none;
@@ -899,7 +907,7 @@ i.like1{
 	float:right;
 }
 .events{
-	background:#a5e5fe;
+	background:#8a8a8a;
 	padding:5%;
 }
 ul.event1{
@@ -932,10 +940,10 @@ span.m_5{
 ul.event1_text h4{
 	font-size:1.2em;
 	text-transform:uppercase;
-	color:#333;
+	color:white;
 }
 ul.event1_text p{
-	color:#333;
+	color:white;
 	font-size:0.8125em;
 	line-height:1.5em;
 }
@@ -943,7 +951,7 @@ ul.event1_text p{
 	margin-top:10px;
 }
 .event-top{
-	border-bottom: 1px solid #E0F6FF;
+	border-bottom: 1px solid white;
 	padding-bottom: 16px;
 	margin-bottom: 12px;
 }
@@ -951,7 +959,7 @@ ul.event1_text p{
 	background: none;
 	font-size: 0.8125em;
 	padding: 3px 10px;
-	color: #F00;
+	color: #000;
 	cursor: pointer;
 	outline: none;
 	-webkit-appearance: none;
@@ -969,6 +977,7 @@ ul.event1_text p{
 .btn2 a:hover {
 	color:gold;
 	text-decoration: none;
+	border-color: gold;
 }
 .blog_events{
 	background:#d4d6d6;
