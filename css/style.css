@@ -382,7 +382,7 @@ li.rss a span:hover{
 	border:none;
 }
 a:hover, a:focus {
-	color:#D8F3FD;
+	color:#000000;
 	text-decoration:none;
 }
 /***** Media Quries *****/
@@ -3086,7 +3086,7 @@ ul.price_list p  a{
 	text-decoration: none;
 }
 ul.price_list p a:hover{
-	color:#B0E8FD
+	color:#161717
 }
 ul.price_list1{
 	padding:0;
