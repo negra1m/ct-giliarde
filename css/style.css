@@ -67,7 +67,6 @@ body a{
 .header-text{
 	background:rgba(6, 29, 37, 0.50);
 	width:48%;
-	max-width: ;
 	padding:2%;
 	border-bottom:5px solid #b7c56a;
 }
@@ -382,7 +381,7 @@ li.rss a span:hover{
 	border:none;
 }
 a:hover, a:focus {
-	color:#D8F3FD;
+	color:#000000;
 	text-decoration:none;
 }
 /***** Media Quries *****/
@@ -1110,28 +1109,11 @@ span.m_date{
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	background: transparent url(../images/pic11.jpg) no-repeat center center;
-	margin-bottom: 5px;
-}
-.ca-icon2{
-	width:100%;
-	height: 200px;
-	display: block;
-	position: relative;
-	margin: 0 auto;
 	background: transparent url(../images/pic10.jpg) no-repeat center center;
 	margin-bottom: 5px;
 }
-.ca-icon3{
-	width:100%;
-	height: 200px;
-	display: block;
-	position: relative;
-	margin: 0 auto;
-	background: transparent url(../images/pic14.jpg) no-repeat center center;
-	margin-bottom: 5px;
-}
-.ca-icon4{
+
+.ca-icon2{
 	width:100%;
 	height: 200px;
 	display: block;
@@ -1140,22 +1122,42 @@ span.m_date{
 	background: transparent url(../images/pic15.jpg) no-repeat center center;
 	margin-bottom: 5px;
 }
+.ca-icon3{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic13.jpg) no-repeat center center;
+	margin-bottom: 5px;
+}
+
+.ca-icon4{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic99.jpg) no-repeat center center;
+	margin-bottom: 5px;
+}
 .ca-icon5{
 	width:100%;
 	height: 200px;
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	background: transparent url(../images/pic16.jpg) no-repeat center center;
+	background: transparent url(../images/pic98.jpg) no-repeat center center;
 	margin-bottom: 5px;
 }
+
 .ca-icon6{
 	width:100%;
 	height: 200px;
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	background: transparent url(../images/pic17.jpg) no-repeat center center;
+	background: transparent url(../images/pic97.jpg) no-repeat center center;
 	margin-bottom: 5px;
 }
 .ca-icon7{
@@ -1164,13 +1166,93 @@ span.m_date{
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	background: transparent url(../images/pic17.jpg) no-repeat center center;
+	background: transparent url(../images/pic96.jpg) no-repeat center center;
 	margin-bottom: 5px;
 }
-.ca-item-2 .ca-icon{
+.ca-icon8{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic95.jpg) no-repeat center center;
+	margin-bottom: 5px;
+}
+.ca-icon9{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic94.jpg) no-repeat center center;
+	margin-bottom: 5px;
+}
+.ca-icon10{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic93.jpg) no-repeat center center;
+	margin-bottom: 5px;
+}
+.ca-icon11{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic92.jpg) no-repeat center center;
+	margin-bottom: 5px;
+}
+.ca-icon12{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic91.jpg) no-repeat center center;
+	margin-bottom: 5px;
+} 
+.ca-icon13{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic90.jpg) no-repeat center center;
+	margin-bottom: 5px;
+} 
+.ca-icon14{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic89.jpg) no-repeat center center;
+	margin-bottom: 5px;
+} 
+.ca-icon15{
+	width:100%;
+	height: 200px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	background: transparent url(../images/pic88.jpg) no-repeat center center;
+	margin-bottom: 5px;
+} 
+
+
+
+
+/* */
+/* .ca-item-2 .ca-icon{
 	background-image:url(../images/pic10.jpg);
 }
-.ca-item-2 .ca-icon1{
+.ca-item-1 .ca-icon{
+	background-image: url(../images/pic10.jpg);
+} */
+/* .ca-item-2 .ca-icon1{
 	background-image:url(../images/pic1.jpg);
 }
 .ca-item-2 .ca-icon2{
@@ -1196,7 +1278,7 @@ span.m_date{
 }
 .ca-item-4 .ca-icon{
 	background-image:url(../images/pic9.jpg);
-}
+} */
 .ca-content-wrapper{
 	background:ghostwhite;
 	position:absolute;
@@ -3003,7 +3085,7 @@ ul.price_list p  a{
 	text-decoration: none;
 }
 ul.price_list p a:hover{
-	color:#B0E8FD
+	color:#161717
 }
 ul.price_list1{
 	padding:0;
