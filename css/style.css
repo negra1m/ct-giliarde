@@ -3987,11 +3987,11 @@ span.m_26 {
 	ul.price1 h3, ul.price2 h3 {
 		margin: 1% 0;
 	}
-	li.price_but, li.price_but1{
+	/* li.price_but, li.price_but1{
 		padding: 1% 0;
 		width: 20%;
 		margin: 2% auto;
-	}
+	} */
 	h2.m_26 {
 		margin: 1% 0;
 	}
