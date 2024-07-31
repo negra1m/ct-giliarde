@@ -1609,6 +1609,9 @@ h1.m_11{
 .about-left-text{
 	text-align:center;
 }
+.present-card {
+	color: #a7a7a7; padding: 0 5rem; display: flex; flex-direction: column; align-items: center;
+  }
 .about-left-text h2 {
 	font-size: 2.5em;
 	font-weight: 100;
@@ -3113,7 +3116,7 @@ li.price_but{
 	border: 1px solid #FFF;
 	text-transform: uppercase;
 	text-decoration: none;
-	width: 55%;
+	width: 100%;
 	margin: 5% auto;
 }
 li.price_but:hover{
@@ -3849,6 +3852,15 @@ span.m_26 {
 }
 }
 @media (max-width:768px){
+	.present-card  {
+		padding: 0 1rem;
+		
+
+	}
+	.present-card > p {
+		width: 100%; 
+		text-align: center;
+	}
   .timetable
 	{
 		display:none;
@@ -3975,11 +3987,11 @@ span.m_26 {
 	ul.price1 h3, ul.price2 h3 {
 		margin: 1% 0;
 	}
-	li.price_but, li.price_but1{
+	/* li.price_but, li.price_but1{
 		padding: 1% 0;
 		width: 20%;
 		margin: 2% auto;
-	}
+	} */
 	h2.m_26 {
 		margin: 1% 0;
 	}
