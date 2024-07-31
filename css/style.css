@@ -1609,6 +1609,9 @@ h1.m_11{
 .about-left-text{
 	text-align:center;
 }
+.present-card {
+	color: #a7a7a7; padding: 0 5rem; display: flex; flex-direction: column; align-items: center;
+  }
 .about-left-text h2 {
 	font-size: 2.5em;
 	font-weight: 100;
@@ -3849,9 +3852,14 @@ span.m_26 {
 }
 }
 @media (max-width:768px){
-	#myVideo  {
-		/* top: -3rem!important; */
-		/* right: -65rem!important */
+	.present-card  {
+		padding: 0 1rem;
+		
+
+	}
+	.present-card > p {
+		width: 100%; 
+		text-align: center;
 	}
   .timetable
 	{
