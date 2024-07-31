@@ -3113,7 +3113,7 @@ li.price_but{
 	border: 1px solid #FFF;
 	text-transform: uppercase;
 	text-decoration: none;
-	width: 55%;
+	width: 100%;
 	margin: 5% auto;
 }
 li.price_but:hover{
@@ -3849,6 +3849,10 @@ span.m_26 {
 }
 }
 @media (max-width:768px){
+	#myVideo  {
+		/* top: -3rem!important; */
+		/* right: -65rem!important */
+	}
   .timetable
 	{
 		display:none;
