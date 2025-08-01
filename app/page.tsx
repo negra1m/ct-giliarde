@@ -230,6 +230,101 @@ export default function CTGiliardeLima() {
         </div>
       </section>
 
+      {/* Projeto Social */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-8">
+              <span className="text-yellow-500">Projeto</span> Social
+            </h2>
+            <div className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-lg p-8 mb-8">
+              <div className="flex items-center justify-center mb-6">
+                <div className="bg-yellow-500 rounded-full p-4">
+                  <Users className="w-8 h-8 text-black" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-yellow-500 mb-4">Jiu-Jitsu para Todos</h3>
+              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                Acreditamos que o Jiu-Jitsu deve ser acessível a todos. Por isso, oferecemos aulas gratuitas para a
+                comunidade, promovendo disciplina, respeito e transformação social através do esporte.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-black/30 rounded-lg p-6 border border-yellow-500/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <MapPin className="w-6 h-6 text-yellow-500" />
+                    <h4 className="text-xl font-semibold text-white">Local</h4>
+                  </div>
+                  <p className="text-gray-300">Escola Guido Dante</p>
+                  <p className="text-gray-400 text-sm">São Pedro - SP</p>
+                </div>
+
+                <div className="bg-black/30 rounded-lg p-6 border border-yellow-500/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Clock className="w-6 h-6 text-yellow-500" />
+                    <h4 className="text-xl font-semibold text-white">Horário</h4>
+                  </div>
+                  <p className="text-gray-300">Sábados</p>
+                  <p className="text-yellow-500 font-semibold">9:45 às 11:00</p>
+                </div>
+              </div>
+
+              <div className="bg-yellow-500/5 border border-yellow-500/20 rounded-lg p-6 mb-6">
+                <h4 className="text-lg font-semibold text-yellow-500 mb-3">O que oferecemos:</h4>
+                <div className="grid md:grid-cols-2 gap-4 text-left">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span className="text-gray-300">Aulas gratuitas de Jiu-Jitsu</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span className="text-gray-300">Formação de caráter</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span className="text-gray-300">Disciplina e respeito</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span className="text-gray-300">Inclusão social</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://wa.me/5519998977213?text=Olá! Gostaria de saber mais sobre o projeto social de Jiu-Jitsu na Escola Guido Dante."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="lg" className="bg-yellow-500 text-black hover:bg-yellow-600 text-lg px-8 py-4">
+                    SAIBA MAIS
+                  </Button>
+                </a>
+                <a
+                  href="https://wa.me/5519998977213?text=Olá! Gostaria de participar do projeto social de Jiu-Jitsu na Escola Guido Dante."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black text-lg px-8 py-4 bg-transparent"
+                  >
+                    QUERO PARTICIPAR
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-gray-400 italic">"O esporte transforma vidas. Venha fazer parte dessa família!"</p>
+              <p className="text-yellow-500 font-semibold mt-2">- CT Giliarde de Lima</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Modalidades */}
       <section id="modalidades" className="py-20 bg-black">
         <div className="container mx-auto px-4">
@@ -526,7 +621,6 @@ export default function CTGiliardeLima() {
             </div>
 
             {/* Instagram Grid Placeholder */}
-            
 
             {/* Call to Action */}
             <div className="text-center">
@@ -538,7 +632,7 @@ export default function CTGiliardeLima() {
               >
                 <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 text-lg">
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                   Ver no Instagram
                 </Button>
