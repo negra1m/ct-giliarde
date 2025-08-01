@@ -75,6 +75,28 @@ export default function CTGiliardeLima() {
     }
   }
 
+  useEffect(() => {
+    // Mobile video restart handler
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        const videos = document.querySelectorAll("video")
+        videos.forEach((video) => {
+          if (video.paused && !video.ended) {
+            video.play().catch(() => {
+              // Ignore play errors
+            })
+          }
+        })
+      }
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange)
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
@@ -129,7 +151,17 @@ export default function CTGiliardeLima() {
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Blurred Background Video for large screens */}
         <div className="absolute inset-0 hidden lg:block">
-          <video autoPlay muted loop playsInline className="w-full h-full object-cover blur-md">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            webkit-playsinline="true"
+            x5-playsinline="true"
+            className="w-full h-full object-cover blur-md"
+            onLoadedData={() => setIsVideoLoaded(true)}
+            onError={() => setIsVideoLoaded(false)}
+          >
             <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AQPRCPPDcM0jYUMYYeIW2ymVDppmHVSFC0HkzaoP_mdZxvl3-tcaEu7dsyVBpQbtFMlniDg0uCp-j6W2GzF9nEbG9JsO-f2S-vaZBQ6es3QUQxZvOTHqbb0AiNn1XMh.mp4" type="video/mp4" />
           </video>
         </div>
@@ -141,11 +173,37 @@ export default function CTGiliardeLima() {
             muted
             loop
             playsInline
+            webkit-playsinline="true"
+            x5-playsinline="true"
             className="w-full h-full object-cover"
             onLoadedData={() => setIsVideoLoaded(true)}
+            onError={() => setIsVideoLoaded(false)}
+            onEnded={(e) => {
+              // Restart video if it ends unexpectedly
+              e.currentTarget.currentTime = 0
+              e.currentTarget.play().catch(() => {
+                // If play fails, just continue
+              })
+            }}
+            onPause={(e) => {
+              // Try to resume if paused unexpectedly
+              if (!e.currentTarget.ended) {
+                e.currentTarget.play().catch(() => {
+                  // If play fails, just continue
+                })
+              }
+            }}
           >
             <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AQPRCPPDcM0jYUMYYeIW2ymVDppmHVSFC0HkzaoP_mdZxvl3-tcaEu7dsyVBpQbtFMlniDg0uCp-j6W2GzF9nEbG9JsO-f2S-vaZBQ6es3QUQxZvOTHqbb0AiNn1XMh.mp4" type="video/mp4" />
           </video>
+
+          {/* Loading/Fallback background - black with optional loading spinner */}
+          {!isVideoLoaded && (
+            <div className="absolute inset-0 bg-black flex items-center justify-center">
+              {/* Loading spinner */}
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
+            </div>
+          )}
         </div>
 
         {/* Overlay */}
