@@ -111,25 +111,40 @@ export default function CTGiliardeLima() {
               </div>
             </div>
             <div className="hidden md:flex space-x-6">
-              <button onClick={() => scrollToSection("home")} className="hover:text-yellow-500 transition-colors">
+              <button
+                onClick={() => scrollToSection("home")}
+                className="hover:text-yellow-500 transition-colors cursor-pointer"
+              >
                 Início
               </button>
-              <button onClick={() => scrollToSection("about")} className="hover:text-yellow-500 transition-colors">
+              <button
+                onClick={() => scrollToSection("about")}
+                className="hover:text-yellow-500 transition-colors cursor-pointer"
+              >
                 Sobre
               </button>
               <button
                 onClick={() => scrollToSection("modalidades")}
-                className="hover:text-yellow-500 transition-colors"
+                className="hover:text-yellow-500 transition-colors cursor-pointer"
               >
                 Modalidades
               </button>
-              <button onClick={() => scrollToSection("precos")} className="hover:text-yellow-500 transition-colors">
+              <button
+                onClick={() => scrollToSection("precos")}
+                className="hover:text-yellow-500 transition-colors cursor-pointer"
+              >
                 Preços
               </button>
-              <button onClick={() => scrollToSection("eventos")} className="hover:text-yellow-500 transition-colors">
+              <button
+                onClick={() => scrollToSection("eventos")}
+                className="hover:text-yellow-500 transition-colors cursor-pointer"
+              >
                 Eventos
               </button>
-              <button onClick={() => scrollToSection("contato")} className="hover:text-yellow-500 transition-colors">
+              <button
+                onClick={() => scrollToSection("contato")}
+                className="hover:text-yellow-500 transition-colors cursor-pointer"
+              >
                 Contato
               </button>
             </div>
@@ -138,7 +153,7 @@ export default function CTGiliardeLima() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-yellow-500 text-black hover:bg-yellow-600">
+              <Button className="bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
                 <Phone className="w-4 h-4 mr-2" />
                 (19) 99183-4114
               </Button>
@@ -227,7 +242,10 @@ export default function CTGiliardeLima() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button size="lg" className="bg-yellow-500 text-black hover:bg-yellow-600 text-lg px-8 py-4">
+              <Button
+                size="lg"
+                className="bg-yellow-500 text-black hover:bg-yellow-600 text-lg px-8 py-4 cursor-pointer"
+              >
                 MATRICULE-SE
               </Button>
             </a>
@@ -239,7 +257,7 @@ export default function CTGiliardeLima() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black text-lg px-8 py-4 bg-transparent"
+                className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black text-lg px-8 py-4 bg-transparent cursor-pointer"
               >
                 AULA GRATUITA
               </Button>
@@ -355,7 +373,10 @@ export default function CTGiliardeLima() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button size="lg" className="bg-yellow-500 text-black hover:bg-yellow-600 text-lg px-8 py-4">
+                  <Button
+                    size="lg"
+                    className="bg-yellow-500 text-black hover:bg-yellow-600 text-lg px-8 py-4 cursor-pointer"
+                  >
                     SAIBA MAIS
                   </Button>
                 </a>
@@ -367,7 +388,7 @@ export default function CTGiliardeLima() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black text-lg px-8 py-4 bg-transparent"
+                    className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black text-lg px-8 py-4 bg-transparent cursor-pointer"
                   >
                     QUERO PARTICIPAR
                   </Button>
@@ -411,7 +432,9 @@ export default function CTGiliardeLima() {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600">CONSULTE</Button>
+                    <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
+                      CONSULTE
+                    </Button>
                   </a>
                 </CardContent>
               </Card>
@@ -426,42 +449,207 @@ export default function CTGiliardeLima() {
           <h2 className="text-4xl font-bold text-center mb-12">
             <span className="text-yellow-500">Nossos</span> Preços
           </h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {[
-              { frequency: "1 AULA NA SEMANA", price: "R$110", period: ".00" },
-              { frequency: "2 AULAS NA SEMANA", price: "R$140", period: ".00" },
-              { frequency: "3 AULAS NA SEMANA", price: "R$160", period: ".00" },
-              { frequency: "4 AULAS NA SEMANA", price: "R$190", period: ".00" },
-              { frequency: "5 AULAS NA SEMANA", price: "R$210", period: ".00" },
-            ].map((plano, index) => (
-              <Card
-                key={index}
-                className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500 transition-colors text-center"
-              >
+
+          {/* Aulas em Grupos */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-center mb-8 text-yellow-500">AULAS EM GRUPOS</h3>
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
+              {[
+                { frequency: "1X NA SEMANA", price: "R$115", period: ",00" },
+                { frequency: "2X NA SEMANA", price: "R$145", period: ",00" },
+                { frequency: "3X NA SEMANA", price: "R$165", period: ",00" },
+                { frequency: "4X NA SEMANA", price: "R$195", period: ",00" },
+                { frequency: "5X NA SEMANA", price: "R$215", period: ",00" },
+              ].map((plano, index) => (
+                <Card
+                  key={index}
+                  className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500 transition-colors text-center"
+                >
+                  <CardHeader>
+                    <CardTitle className="text-yellow-500 text-sm">{plano.frequency}</CardTitle>
+                    <div className="text-3xl font-bold text-slate-300">
+                      {plano.price}
+                      <span className="text-lg">{plano.period}</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <div className="text-sm text-gray-400 space-y-1">
+                      <div>• Jiu Jitsu</div>
+                      <div>• Muay Thai</div>
+                      <div>• Todas as modalidades</div>
+                    </div>
+                    <a
+                      href={`https://wa.me/5519991834114?text=Olá! Gostaria de me matricular no plano de ${plano.frequency} na academia CT Giliarde de Lima.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 mt-4 cursor-pointer">
+                        MATRICULE-SE
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Aula Avulsa */}
+            <div className="max-w-sm mx-auto">
+              <Card className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500 transition-colors text-center">
                 <CardHeader>
-                  <CardTitle className="text-yellow-500 text-sm">{plano.frequency}</CardTitle>
+                  <CardTitle className="text-yellow-500 text-sm">AULA AVULSA</CardTitle>
                   <div className="text-3xl font-bold text-slate-300">
-                    {plano.price}
-                    <span className="text-lg">{plano.period}</span>
+                    R$40<span className="text-lg">,00</span>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="text-sm text-gray-400 space-y-1">
-                    <div>• Muay Thai</div>
-                    <div>• Jiu Jitsu</div>
-                    <div>• Personal Fight</div>
-                  </div>
+                <CardContent>
                   <a
-                    href={`https://wa.me/5519991834114?text=Olá! Gostaria de me matricular no plano de ${plano.frequency} na academia CT Giliarde de Lima.`}
+                    href="https://wa.me/5519991834114?text=Olá! Gostaria de agendar uma aula avulsa na academia CT Giliarde de Lima."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 mt-4">MATRICULE-SE</Button>
+                    <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
+                      AGENDAR
+                    </Button>
                   </a>
                 </CardContent>
               </Card>
-            ))}
+            </div>
+          </div>
+
+          {/* Personal Fight */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-center mb-8 text-yellow-500">PERSONAL FIGHT</h3>
+
+            {/* Avulso */}
+            <div className="max-w-sm mx-auto mb-8">
+              <Card className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500 transition-colors text-center">
+                <CardHeader>
+                  <CardTitle className="text-yellow-500 text-sm">AVULSO</CardTitle>
+                  <div className="text-3xl font-bold text-slate-300">
+                    R$100<span className="text-lg">,00</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <a
+                    href="https://wa.me/5519991834114?text=Olá! Gostaria de agendar um Personal Fight avulso na academia CT Giliarde de Lima."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
+                      AGENDAR
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Pacote Individual */}
+              <div>
+                <h4 className="text-xl font-bold text-center mb-4 text-yellow-500">PACOTE INDIVIDUAL</h4>
+                <div className="space-y-4">
+                  <Card className="bg-gray-900 border-yellow-500/20 text-center">
+                    <CardHeader>
+                      <CardTitle className="text-yellow-500 text-sm">1X NA SEMANA (4 AULAS)</CardTitle>
+                      <div className="text-2xl font-bold text-slate-300">R$360,00</div>
+                    </CardHeader>
+                    <CardContent>
+                      <a
+                        href="https://wa.me/5519991834114?text=Olá! Gostaria de contratar o pacote individual de Personal Fight 1x na semana na academia CT Giliarde de Lima."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
+                          CONTRATAR
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gray-900 border-yellow-500/20 text-center">
+                    <CardHeader>
+                      <CardTitle className="text-yellow-500 text-sm">2X NA SEMANA (8 AULAS)</CardTitle>
+                      <div className="text-2xl font-bold text-slate-300">R$680,00</div>
+                    </CardHeader>
+                    <CardContent>
+                      <a
+                        href="https://wa.me/5519991834114?text=Olá! Gostaria de contratar o pacote individual de Personal Fight 2x na semana na academia CT Giliarde de Lima."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
+                          CONTRATAR
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Pacote em Dupla */}
+              <div>
+                <h4 className="text-xl font-bold text-center mb-4 text-yellow-500">PACOTE EM DUPLA</h4>
+                <div className="space-y-4">
+                  <Card className="bg-gray-900 border-yellow-500/20 text-center">
+                    <CardHeader>
+                      <CardTitle className="text-yellow-500 text-sm">1X NA SEMANA (4 AULAS)</CardTitle>
+                      <div className="text-2xl font-bold text-slate-300">R$400,00</div>
+                    </CardHeader>
+                    <CardContent>
+                      <a
+                        href="https://wa.me/5519991834114?text=Olá! Gostaria de contratar o pacote em dupla de Personal Fight 1x na semana na academia CT Giliarde de Lima."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
+                          CONTRATAR
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gray-900 border-yellow-500/20 text-center">
+                    <CardHeader>
+                      <CardTitle className="text-yellow-500 text-sm">2X NA SEMANA (8 AULAS)</CardTitle>
+                      <div className="text-2xl font-bold text-slate-300">R$800,00</div>
+                    </CardHeader>
+                    <CardContent>
+                      <a
+                        href="https://wa.me/5519991834114?text=Olá! Gostaria de contratar o pacote em dupla de Personal Fight 2x na semana na academia CT Giliarde de Lima."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
+                          CONTRATAR
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Descontos */}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6 text-center">
+              <h4 className="text-lg font-bold text-yellow-500 mb-3">DESCONTOS ESPECIAIS</h4>
+              <div className="space-y-2 text-gray-300">
+                <p>
+                  🏆 <strong>Pacote Família:</strong> 10% de desconto
+                </p>
+                <p>
+                  🥋 <strong>Duas modalidades ou mais:</strong> 10% de desconto
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -476,7 +664,7 @@ export default function CTGiliardeLima() {
             {canEdit && (
               <Button
                 onClick={() => setIsEditingEvent(!isEditingEvent)}
-                className="bg-yellow-500 text-black hover:bg-yellow-600 text-sm"
+                className="bg-yellow-500 text-black hover:bg-yellow-600 text-sm cursor-pointer"
               >
                 {isEditingEvent ? "Salvar" : "Editar Evento"}
               </Button>
@@ -578,20 +766,20 @@ export default function CTGiliardeLima() {
                         saveEventData(eventData)
                         setIsEditingEvent(false)
                       }}
-                      className="bg-green-600 hover:bg-green-700 text-white"
+                      className="bg-green-600 hover:bg-green-700 text-white cursor-pointer"
                     >
                       Salvar Alterações
                     </Button>
                     <Button
                       onClick={() => setIsEditingEvent(false)}
                       variant="outline"
-                      className="border-gray-500 text-gray-300 hover:bg-gray-800"
+                      className="border-gray-500 text-gray-300 hover:bg-gray-800 cursor-pointer"
                     >
                       Cancelar
                     </Button>
                   </div>
                 )}
-                <Button className="bg-yellow-500 text-black hover:bg-yellow-600">
+                <Button className="bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
                   Inscreva-se Agora
                   <ChevronRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -619,39 +807,120 @@ export default function CTGiliardeLima() {
           <h2 className="text-4xl font-bold text-center mb-12">
             <span className="text-yellow-500">Nossos</span> Horários
           </h2>
-          <div className="max-w-2xl mx-auto">
-            <Card className="bg-gray-900 border-yellow-500/20">
-              <CardContent className="p-8">
-                <div className="space-y-4 text-slate-300">
-                  <div className="flex items-center justify-between py-3 border-b border-gray-700">
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-yellow-500" />
-                      <span className="font-semibold">Segunda, Quarta, Sexta</span>
-                    </div>
-                    <span className="text-yellow-500">7h às 20h</span>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Jiu Jitsu Adulto */}
+              <Card className="bg-gray-900 border-yellow-500/20">
+                <CardHeader>
+                  <CardTitle className="text-yellow-500 text-xl">JIU JITSU ADULTO</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-slate-300">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Segunda e Sexta às <strong className="text-yellow-500">20:00</strong>
+                    </span>
                   </div>
-                  <div className="flex items-center justify-between py-3 border-b border-gray-700">
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-yellow-500" />
-                      <span className="font-semibold">Terça e Quinta</span>
-                    </div>
-                    <span className="text-yellow-500">7h às 19h</span>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Quarta às <strong className="text-yellow-500">7:00 e 20:00</strong>
+                    </span>
                   </div>
-                  <div className="flex items-center justify-between py-3">
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-yellow-500" />
-                      <span className="font-semibold">Sábado</span>
-                    </div>
-                    <span className="text-yellow-500">Consulte horários</span>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Terça e Quinta às <strong className="text-yellow-500">15:30</strong>
+                    </span>
                   </div>
-                </div>
-                <div className="mt-6 p-4 bg-yellow-500/10 rounded-lg border border-yellow-500/20">
-                  <p className="text-center text-yellow-500 font-semibold">
-                    Personal Fighting - Consulte nossos horários especiais
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+
+              {/* Jiu Jitsu Kids */}
+              <Card className="bg-gray-900 border-yellow-500/20">
+                <CardHeader>
+                  <CardTitle className="text-yellow-500 text-xl">JIU JITSU KIDS</CardTitle>
+                  <CardDescription className="text-gray-400">8 a 12 anos</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3 text-slate-300">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Terça e Quinta às <strong className="text-yellow-500">19:00</strong>
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Quarta e Sexta às <strong className="text-yellow-500">9:30</strong>
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Jiu Jitsu Mirim */}
+              <Card className="bg-gray-900 border-yellow-500/20">
+                <CardHeader>
+                  <CardTitle className="text-yellow-500 text-xl">JIU JITSU MIRIM</CardTitle>
+                  <CardDescription className="text-gray-400">4 a 7 anos</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3 text-slate-300">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Terça e Quinta às <strong className="text-yellow-500">18:00</strong>
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Quarta e Sexta às <strong className="text-yellow-500">9:30</strong>
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Muay Thai */}
+              <Card className="bg-gray-900 border-yellow-500/20">
+                <CardHeader>
+                  <CardTitle className="text-yellow-500 text-xl">MUAY THAI</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-slate-300">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Segunda, Quarta e Sexta às <strong className="text-yellow-500">18:00</strong>
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-yellow-500" />
+                    <span>
+                      Terça e Quinta às <strong className="text-yellow-500">9:30</strong>
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Personal Fight */}
+            <div className="mt-8">
+              <Card className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30">
+                <CardContent className="p-8 text-center">
+                  <h3 className="text-2xl font-bold text-yellow-500 mb-4">PERSONAL FIGHT</h3>
+                  <p className="text-gray-300 text-lg">Consultar horários disponíveis</p>
+                  <a
+                    href="https://wa.me/5519991834114?text=Olá! Gostaria de consultar os horários disponíveis para Personal Fight na academia CT Giliarde de Lima."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4"
+                  >
+                    <Button className="bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
+                      CONSULTAR HORÁRIOS
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -688,7 +957,7 @@ export default function CTGiliardeLima() {
                 rel="noopener noreferrer"
                 className="inline-block"
               >
-                <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 text-lg">
+                <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 text-lg cursor-pointer">
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
@@ -711,7 +980,7 @@ export default function CTGiliardeLima() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button size="lg" className="bg-black text-yellow-500 hover:bg-gray-900 text-lg px-8 py-4">
+            <Button size="lg" className="bg-black text-yellow-500 hover:bg-gray-900 text-lg px-8 py-4 cursor-pointer">
               QUERO UMA AULA GRATUITA
             </Button>
           </a>
