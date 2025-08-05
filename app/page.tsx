@@ -26,14 +26,14 @@ export default function CTGiliardeLima() {
       return saved
         ? JSON.parse(saved)
         : {
-            title: "COPA ARMLOCK DE JIU-JITSU 2025",
-            description: "Prepare-se para uma competição emocionante!",
-            content:
-              "Participe de um dos maiores eventos de Jiu-Jitsu da região! Onde atletas de diversos níveis disputarão em busca do título.",
-            date: "19 Outubro, 2025",
-            location: "GINÁSIO BORDADÃO - São Pedro",
-            image: "/copa-armlock-event.png",
-          }
+          title: "COPA ARMLOCK DE JIU-JITSU 2025",
+          description: "Prepare-se para uma competição emocionante!",
+          content:
+            "Participe de um dos maiores eventos de Jiu-Jitsu da região! Onde atletas de diversos níveis disputarão em busca do título.",
+          date: "19 Outubro, 2025",
+          location: "GINÁSIO BORDADÃO - São Pedro",
+          image: "/copa-armlock-event.png",
+        }
     }
     return {
       title: "COPA ARMLOCK DE JIU-JITSU 2024",
@@ -904,7 +904,7 @@ export default function CTGiliardeLima() {
 
             {/* Personal Fight */}
             <div className="mt-8">
-              <Card className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30">
+              <Card className="bg-yellow-500/10 to-yellow-600/10 border border-yellow-500/30">
                 <CardContent className="p-8 text-center">
                   <h3 className="text-2xl font-bold text-yellow-500 mb-4">PERSONAL FIGHT</h3>
                   <p className="text-gray-300 text-lg">Consultar horários disponíveis</p>
