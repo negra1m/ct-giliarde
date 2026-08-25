@@ -1027,7 +1027,7 @@ export default function CTGiliardeLima() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-yellow-500/20 py-8">
+      <footer className="bg-gray-900 border-t border-yellow-500/20 pt-8 pb-[calc(2rem+34px)]">
         <div className="container mx-auto px-4">
           {/* Mapa */}
           <div className="mb-8">
@@ -1069,6 +1069,28 @@ export default function CTGiliardeLima() {
                 </a>
               </p>
             </div>
+          </div>
+
+          <div className="mt-6 border-t border-white/10 pt-5 text-center">
+            <a
+              href="https://fewcompany.com?client=ct-giliarde"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-md bg-gray-950 px-3 py-2"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/few-logo.png"
+                alt=""
+                width={192}
+                height={192}
+                loading="lazy"
+                className="h-10 w-auto grayscale opacity-70 mix-blend-screen transition-[filter,opacity] duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+              />
+              <span className="text-xs tracking-wide text-gray-500 transition-colors duration-300 group-hover:text-gray-300">
+                Construído por Few Company
+              </span>
+            </a>
           </div>
         </div>
       </footer>
