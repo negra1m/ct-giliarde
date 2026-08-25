@@ -1057,17 +1057,6 @@ export default function CTGiliardeLima() {
             <div className="text-center md:text-right">
               <p className="text-gray-400 text-sm">© 2024 CT Giliarde de Lima. Todos os direitos reservados.</p>
               <p className="text-yellow-500 text-sm font-semibold mt-1">OSS!</p>
-              <p className="text-gray-400 text-xs mt-2">
-                Site produzido por{" "}
-                <a
-                  href="https://www.fewcompany.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-yellow-500 hover:text-yellow-400 transition-colors"
-                >
-                  Few Company
-                </a>
-              </p>
             </div>
           </div>
 
