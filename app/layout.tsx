@@ -1,10 +1,17 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import { Bebas_Neue, Barlow } from "next/font/google"
 import "./globals.css"
 import FewBanner from "@/components/few-banner"
 
-const inter = Inter({ subsets: ["latin"] })
+const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-bebas", display: "swap" })
+const barlow = Barlow({ weight: ["400", "500", "600"], subsets: ["latin"], variable: "--font-barlow", display: "swap" })
+
+const SITE_URL = "https://www.ct-giliarde.com.br"
+
+// Gate anti-flash do hero (DESIGN_SPEC §6.3 / G13): só sob prefers-reduced-motion: no-preference.
+const MOTION_GATE =
+  "if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){document.documentElement.classList.add('js-motion')}"
 
 export const metadata: Metadata = {
   title: "CT Giliarde de Lima - Academia de Jiu-Jitsu, Muay Thai e MMA em São Pedro",
@@ -19,7 +26,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://ctgiliardedelima.com.br"),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },
@@ -27,7 +34,7 @@ export const metadata: Metadata = {
     title: "CT Giliarde de Lima - Academia de Jiu-Jitsu, Muay Thai e MMA",
     description:
       "A melhor academia de luta da região! Jiu-Jitsu, Muay Thai, Boxe e MMA em São Pedro/SP. Tradição desde 2004.",
-    url: "https://ctgiliardedelima.com.br",
+    url: SITE_URL,
     siteName: "CT Giliarde de Lima",
     images: [
       {
@@ -56,7 +63,13 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  }
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#D4AF37",
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -65,14 +78,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${bebas.variable} ${barlow.variable}`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />
-        <meta name="theme-color" content="#EAB308" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script dangerouslySetInnerHTML={{ __html: MOTION_GATE }} />
       </head>
-      <body className={inter.className}>
+      <body className="font-body bg-ink-0 text-bone antialiased">
         {children}
         <FewBanner />
       </body>
