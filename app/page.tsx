@@ -1,56 +1,13 @@
 "use client"
 
-import type React from "react"
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Phone, Mail, MapPin, Clock, Users, Trophy, Star, Calendar, ChevronRight } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Users, Trophy, Star } from "lucide-react"
 import Image from "next/image"
 
 export default function CTGiliardeLima() {
-  const [isEditingEvent, setIsEditingEvent] = useState(false)
-  const [canEdit, setCanEdit] = useState(false)
-
-  useEffect(() => {
-    // Check for edit parameter in URL
-    const urlParams = new URLSearchParams(window.location.search)
-    const editParam = urlParams.get("isEdit")
-    setCanEdit(editParam === "bbd7d050f68497418cd44f18806ede35")
-  }, [])
-
-  const [eventData, setEventData] = useState(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("eventData")
-      return saved
-        ? JSON.parse(saved)
-        : {
-          title: "COPA ARMLOCK DE JIU-JITSU 2025",
-          description: "Prepare-se para uma competição emocionante!",
-          content:
-            "Participe de um dos maiores eventos de Jiu-Jitsu da região! Onde atletas de diversos níveis disputarão em busca do título.",
-          date: "19 Outubro, 2025",
-          location: "GINÁSIO BORDADÃO - São Pedro",
-          image: "/copa-armlock-event.png",
-        }
-    }
-    return {
-      title: "COPA ARMLOCK DE JIU-JITSU 2024",
-      description: "Prepare-se para uma competição emocionante!",
-      content:
-        "Participe de um dos maiores eventos de Jiu-Jitsu da região! Onde atletas de diversos níveis disputarão em busca do título.",
-      date: "20 Outubro, 2024",
-      location: "GINÁSIO BORDADÃO - São Pedro",
-      image: "/copa-armlock-event.png",
-    }
-  })
-
-  const saveEventData = (data: typeof eventData) => {
-    setEventData(data)
-    localStorage.setItem("eventData", JSON.stringify(data))
-  }
-
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
 
   useEffect(() => {
@@ -61,18 +18,6 @@ export default function CTGiliardeLima() {
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-  }
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        const imageUrl = e.target?.result as string
-        setEventData({ ...eventData, image: imageUrl })
-      }
-      reader.readAsDataURL(file)
-    }
   }
 
   useEffect(() => {
@@ -130,16 +75,10 @@ export default function CTGiliardeLima() {
                 Modalidades
               </button>
               <button
-                onClick={() => scrollToSection("precos")}
+                onClick={() => scrollToSection("planos")}
                 className="hover:text-yellow-500 transition-colors cursor-pointer"
               >
-                Preços
-              </button>
-              <button
-                onClick={() => scrollToSection("eventos")}
-                className="hover:text-yellow-500 transition-colors cursor-pointer"
-              >
-                Eventos
+                Planos
               </button>
               <button
                 onClick={() => scrollToSection("contato")}
@@ -280,8 +219,8 @@ export default function CTGiliardeLima() {
             </p>
             <div className="bg-gray-900/50 border border-yellow-500/20 rounded-lg p-6 mb-8">
               <blockquote className="text-lg italic text-gray-300 mb-4">
-                "Nunca te orgulhes de haver vencido a um adversário, ao que venceste hoje poderá derrotar-te amanhã. A
-                única vitória que perdura é a que se conquista sobre a própria ignorância."
+                &ldquo;Nunca te orgulhes de haver vencido a um adversário, ao que venceste hoje poderá derrotar-te amanhã. A
+                única vitória que perdura é a que se conquista sobre a própria ignorância.&rdquo;
               </blockquote>
               <cite className="text-yellow-500 font-semibold">— Jigoro Kano, criador do Judô</cite>
             </div>
@@ -397,7 +336,7 @@ export default function CTGiliardeLima() {
             </div>
 
             <div className="text-center">
-              <p className="text-gray-400 italic">"O esporte transforma vidas. Venha fazer parte dessa família!"</p>
+              <p className="text-gray-400 italic">&ldquo;O esporte transforma vidas. Venha fazer parte dessa família!&rdquo;</p>
               <p className="text-yellow-500 font-semibold mt-2">- CT Giliarde de Lima</p>
             </div>
           </div>
@@ -443,363 +382,28 @@ export default function CTGiliardeLima() {
         </div>
       </section>
 
-      {/* Preços */}
-      <section id="precos" className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
-            <span className="text-yellow-500">Nossos</span> Preços
+      {/* Planos */}
+      <section id="planos" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-4">
+            <span className="text-yellow-500">Planos</span> e Valores
           </h2>
-
-          {/* Aulas em Grupos */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-center mb-8 text-yellow-500">AULAS EM GRUPOS</h3>
-            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
-              {[
-                { frequency: "1X NA SEMANA", price: "R$115", period: ",00" },
-                { frequency: "2X NA SEMANA", price: "R$145", period: ",00" },
-                { frequency: "3X NA SEMANA", price: "R$165", period: ",00" },
-                { frequency: "4X NA SEMANA", price: "R$195", period: ",00" },
-                { frequency: "5X NA SEMANA", price: "R$215", period: ",00" },
-              ].map((plano, index) => (
-                <Card
-                  key={index}
-                  className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500 transition-colors text-center"
-                >
-                  <CardHeader>
-                    <CardTitle className="text-yellow-500 text-sm">{plano.frequency}</CardTitle>
-                    <div className="text-3xl font-bold text-slate-300">
-                      {plano.price}
-                      <span className="text-lg">{plano.period}</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="text-sm text-gray-400 space-y-1">
-                      <div>• Jiu Jitsu</div>
-                      <div>• Muay Thai</div>
-                      <div>• Todas as modalidades</div>
-                    </div>
-                    <a
-                      href={`https://wa.me/5519991834114?text=Olá! Gostaria de me matricular no plano de ${plano.frequency} na academia CT Giliarde de Lima.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                    >
-                      <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 mt-4 cursor-pointer">
-                        MATRICULE-SE
-                      </Button>
-                    </a>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Aula Avulsa */}
-            <div className="max-w-sm mx-auto">
-              <Card className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500 transition-colors text-center">
-                <CardHeader>
-                  <CardTitle className="text-yellow-500 text-sm">AULA AVULSA</CardTitle>
-                  <div className="text-3xl font-bold text-slate-300">
-                    R$40<span className="text-lg">,00</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <a
-                    href="https://wa.me/5519991834114?text=Olá! Gostaria de agendar uma aula avulsa na academia CT Giliarde de Lima."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
-                      AGENDAR
-                    </Button>
-                  </a>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Personal Fight */}
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold text-center mb-8 text-yellow-500">PERSONAL FIGHT</h3>
-
-            {/* Avulso */}
-            <div className="max-w-sm mx-auto mb-8">
-              <Card className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500 transition-colors text-center">
-                <CardHeader>
-                  <CardTitle className="text-yellow-500 text-sm">AVULSO</CardTitle>
-                  <div className="text-3xl font-bold text-slate-300">
-                    R$100<span className="text-lg">,00</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <a
-                    href="https://wa.me/5519991834114?text=Olá! Gostaria de agendar um Personal Fight avulso na academia CT Giliarde de Lima."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
-                      AGENDAR
-                    </Button>
-                  </a>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Pacote Individual */}
-              <div>
-                <h4 className="text-xl font-bold text-center mb-4 text-yellow-500">PACOTE INDIVIDUAL</h4>
-                <div className="space-y-4">
-                  <Card className="bg-gray-900 border-yellow-500/20 text-center">
-                    <CardHeader>
-                      <CardTitle className="text-yellow-500 text-sm">1X NA SEMANA (4 AULAS)</CardTitle>
-                      <div className="text-2xl font-bold text-slate-300">R$360,00</div>
-                    </CardHeader>
-                    <CardContent>
-                      <a
-                        href="https://wa.me/5519991834114?text=Olá! Gostaria de contratar o pacote individual de Personal Fight 1x na semana na academia CT Giliarde de Lima."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
-                          CONTRATAR
-                        </Button>
-                      </a>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="bg-gray-900 border-yellow-500/20 text-center">
-                    <CardHeader>
-                      <CardTitle className="text-yellow-500 text-sm">2X NA SEMANA (8 AULAS)</CardTitle>
-                      <div className="text-2xl font-bold text-slate-300">R$680,00</div>
-                    </CardHeader>
-                    <CardContent>
-                      <a
-                        href="https://wa.me/5519991834114?text=Olá! Gostaria de contratar o pacote individual de Personal Fight 2x na semana na academia CT Giliarde de Lima."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
-                          CONTRATAR
-                        </Button>
-                      </a>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-
-              {/* Pacote em Dupla */}
-              <div>
-                <h4 className="text-xl font-bold text-center mb-4 text-yellow-500">PACOTE EM DUPLA</h4>
-                <div className="space-y-4">
-                  <Card className="bg-gray-900 border-yellow-500/20 text-center">
-                    <CardHeader>
-                      <CardTitle className="text-yellow-500 text-sm">1X NA SEMANA (4 AULAS)</CardTitle>
-                      <div className="text-2xl font-bold text-slate-300">R$400,00</div>
-                    </CardHeader>
-                    <CardContent>
-                      <a
-                        href="https://wa.me/5519991834114?text=Olá! Gostaria de contratar o pacote em dupla de Personal Fight 1x na semana na academia CT Giliarde de Lima."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
-                          CONTRATAR
-                        </Button>
-                      </a>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="bg-gray-900 border-yellow-500/20 text-center">
-                    <CardHeader>
-                      <CardTitle className="text-yellow-500 text-sm">2X NA SEMANA (8 AULAS)</CardTitle>
-                      <div className="text-2xl font-bold text-slate-300">R$800,00</div>
-                    </CardHeader>
-                    <CardContent>
-                      <a
-                        href="https://wa.me/5519991834114?text=Olá! Gostaria de contratar o pacote em dupla de Personal Fight 2x na semana na academia CT Giliarde de Lima."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Button className="w-full bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
-                          CONTRATAR
-                        </Button>
-                      </a>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Descontos */}
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6 text-center">
-              <h4 className="text-lg font-bold text-yellow-500 mb-3">DESCONTOS ESPECIAIS</h4>
-              <div className="space-y-2 text-gray-300">
-                <p>
-                  🏆 <strong>Pacote Família:</strong> 10% de desconto
-                </p>
-                <p>
-                  🥋 <strong>Duas modalidades ou mais:</strong> 10% de desconto
-                </p>
-              </div>
-            </div>
-          </div>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Planos mensais, aula avulsa e Personal Fight. Fale com a gente no WhatsApp e receba os valores na hora.
+          </p>
+          <a
+            href="https://wa.me/5519991834114?text=Olá! Gostaria de saber os planos e valores da academia CT Giliarde de Lima."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="lg" className="bg-yellow-500 text-black hover:bg-yellow-600 text-lg px-8 py-4 cursor-pointer">
+              <Phone className="w-5 h-5 mr-2" />
+              CONSULTAR PLANOS NO WHATSAPP
+            </Button>
+          </a>
         </div>
       </section>
 
-      {/* Eventos */}
-      <section id="eventos" className="py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <h2 className="text-4xl font-bold text-center">
-              <span className="text-yellow-500">Próximos</span> Eventos
-            </h2>
-            {canEdit && (
-              <Button
-                onClick={() => setIsEditingEvent(!isEditingEvent)}
-                className="bg-yellow-500 text-black hover:bg-yellow-600 text-sm cursor-pointer"
-              >
-                {isEditingEvent ? "Salvar" : "Editar Evento"}
-              </Button>
-            )}
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-gradient-to-r from-gray-900 to-black border-yellow-500">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <Calendar className="w-5 h-5 text-yellow-500" />
-                  <Badge className="bg-yellow-500 text-black">EVENTO ESPECIAL</Badge>
-                </div>
-                {isEditingEvent ? (
-                  <input
-                    type="text"
-                    value={eventData.title}
-                    onChange={(e) => setEventData({ ...eventData, title: e.target.value })}
-                    className="text-2xl text-yellow-500 bg-transparent border border-yellow-500/50 rounded px-2 py-1 w-full"
-                  />
-                ) : (
-                  <CardTitle className="text-2xl text-yellow-500">{eventData.title}</CardTitle>
-                )}
-                {isEditingEvent ? (
-                  <input
-                    type="text"
-                    value={eventData.description}
-                    onChange={(e) => setEventData({ ...eventData, description: e.target.value })}
-                    className="text-lg text-gray-300 bg-transparent border border-yellow-500/50 rounded px-2 py-1 w-full"
-                  />
-                ) : (
-                  <CardDescription className="text-lg text-gray-300">{eventData.description}</CardDescription>
-                )}
-              </CardHeader>
-              <CardContent className="text-slate-300">
-                {/* Event Image */}
-                <div className="mb-6">
-                  <Image
-                    src={eventData.image || "/placeholder.svg"}
-                    alt="Imagem do Evento"
-                    width={600}
-                    height={800}
-                    className="w-full object-cover rounded-lg border border-yellow-500/20"
-                  />
-                  {isEditingEvent && (
-                    <div className="mt-2">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageUpload}
-                        className="text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-yellow-500 file:text-black hover:file:bg-yellow-600"
-                      />
-                    </div>
-                  )}
-                </div>
-
-                {isEditingEvent ? (
-                  <textarea
-                    value={eventData.content}
-                    onChange={(e) => setEventData({ ...eventData, content: e.target.value })}
-                    className="text-gray-300 bg-transparent border border-yellow-500/50 rounded px-2 py-1 w-full mb-6 h-20 resize-none"
-                  />
-                ) : (
-                  <p className="text-gray-300 mb-6">{eventData.content}</p>
-                )}
-                <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-5 h-5 text-yellow-500" />
-                    {isEditingEvent ? (
-                      <input
-                        type="text"
-                        value={eventData.date}
-                        onChange={(e) => setEventData({ ...eventData, date: e.target.value })}
-                        className="bg-transparent border border-yellow-500/50 rounded px-2 py-1 flex-1"
-                        placeholder="Data: DD Mês, AAAA"
-                      />
-                    ) : (
-                      <span>Data: {eventData.date}</span>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-yellow-500" />
-                    {isEditingEvent ? (
-                      <input
-                        type="text"
-                        value={eventData.location}
-                        onChange={(e) => setEventData({ ...eventData, location: e.target.value })}
-                        className="bg-transparent border border-yellow-500/50 rounded px-2 py-1 flex-1"
-                        placeholder="Local do evento"
-                      />
-                    ) : (
-                      <span>{eventData.location}</span>
-                    )}
-                  </div>
-                </div>
-                {isEditingEvent && (
-                  <div className="flex gap-2 mb-4">
-                    <Button
-                      onClick={() => {
-                        saveEventData(eventData)
-                        setIsEditingEvent(false)
-                      }}
-                      className="bg-green-600 hover:bg-green-700 text-white cursor-pointer"
-                    >
-                      Salvar Alterações
-                    </Button>
-                    <Button
-                      onClick={() => setIsEditingEvent(false)}
-                      variant="outline"
-                      className="border-gray-500 text-gray-300 hover:bg-gray-800 cursor-pointer"
-                    >
-                      Cancelar
-                    </Button>
-                  </div>
-                )}
-                <Button className="bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer">
-                  Inscreva-se Agora
-                  <ChevronRight className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Aviso sobre persistência de dados */}
-          {canEdit && (
-            <div className="max-w-4xl mx-auto mt-6">
-              <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                <p className="text-yellow-500 text-sm text-center">
-                  ⚠️ <strong>Importante:</strong> As alterações são salvas localmente no navegador. Para persistência
-                  online, é necessário integrar com um banco de dados ou sistema de gerenciamento de conteúdo.
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* Horários */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
