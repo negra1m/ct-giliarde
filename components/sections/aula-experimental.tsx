@@ -27,7 +27,7 @@ export function AulaExperimental() {
 
         <p
           data-reveal
-          className="mx-auto mt-6 max-w-[640px] font-body text-[17px] leading-[1.55] text-bone-70 lg:mt-8 lg:text-[20px] lg:leading-[1.5]"
+          className="mx-auto mt-6 max-w-[760px] font-body text-[17px] leading-[1.55] text-bone-70 lg:mt-8 lg:text-[20px] lg:leading-[1.5]"
         >
           {subParts.map((part, i) => (
             <Fragment key={`${i}-${part}`}>
